@@ -11,4 +11,4 @@ All the necessary vendor, nodemodules, .env etc file/folders are added
 2) open .env file using codeEditor, Do necessary configuration for database
 3) Find .sql file from the root directory here and import it into your server
 4) Finaly run php artisan serve to make it live
-
+5) asffasdf
