@@ -13,9 +13,9 @@ All the necessary vendor, nodemodules, .env etc file/folders are added
 4) Finaly run php artisan serve to make it live
 
 ## Project specification
-Backend : Laravel
-Database: mySql
-frontend : Vuejs
+Backend : Laravel,
+Database: mySql,
+frontend : Vuejs,
 
 
 =======
