@@ -1,0 +1,220 @@
+@import "@css/_settings.css";
+
+.rtl {
+  direction: rtl;
+}
+
+.vuejs3-datepicker {
+  position: relative;
+  display: inline-block;
+  * {
+    box-sizing: border-box;
+  }
+  input {
+    border: 1px solid;
+  }
+  &__icon {
+    display: flex;
+  }
+  &__value {
+    min-width: 200px;
+    display: inline-flex;
+    border-radius: 5px;
+    padding: 13px 15px;
+    cursor: pointer;
+    border: 1px solid ;
+  }
+  &__content{
+    margin-left: 10px;
+    font-size: 15px;
+  }
+  &__typeablecalendar{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  &__inputvalue{
+    min-width: 200px;
+    display: inline-flex;
+    border-radius: 5px;
+    padding: 12px 10px 13px 35px;
+    cursor: pointer;
+    border: 1px solid ;
+  }
+  &__calendar {
+    position: absolute;
+    z-index: 100;
+    background: $white;
+    width: 300px;
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,.12);
+    border-radius: 4px;
+    margin-top: 4px;
+    &-topbar{
+        background-color: $green;
+        color: $white;
+        border-radius: 4px 4px 0px 0px;
+        padding: 25px;
+        &-year{
+            font-size: 30px;
+            margin: 0px;
+            padding-bottom: 10px;
+        }
+        &-day{
+            font-size: 20px;
+            margin: 0px;
+        }
+    }
+    &-actionarea{
+        padding: 10px;
+    }
+     header {
+      display: block;
+      line-height: 40px;
+      span {
+        text-align: center;
+        width: 71.42857142857143%;
+        float: left;
+      }
+      .next, .prev {
+        width: 14.285714285714286%;
+        float: left;
+        text-indent: -10000px;
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          width: 8px;
+          height: 8px;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        }
+      }
+      .prev:after {
+        border-left: 1px solid $black;
+        border-bottom: 1px solid $black;
+      }
+      .prev.disabled:after,  .next.disabled:after{
+        opacity: 0.5;
+      }
+      .next:after {
+        border-top: 1px solid $black;
+        border-right: 1px solid $black;
+      }
+      .prev:not(.disabled), .next:not(.disabled), .up:not(.disabled){
+        cursor: pointer;
+        font-size: 15px;
+        border-radius: 4px;
+        &:hover{
+          background: $hovered;
+        }
+      }
+    }
+    .disabled {
+      color: #ddd;
+      cursor: default;
+    }
+    .flex-rtl {
+      display: flex;
+      width: inherit;
+      flex-wrap: wrap;
+    }
+    .cell {
+      display: inline-block;
+      padding: 0 5px;
+      width: 14.285714285714286%;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 14px;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      &.month, &.year{
+        padding: 10px 5px;
+        height: 50px;
+        line-height: 28px;
+      }
+      &.day-header{
+        text-transform: uppercase;
+      }
+    }
+    .cell:not(.blank):not(.disabled).day, .cell:not(.blank):not(.disabled).month, .cell:not(.blank):not(.disabled).year{
+      cursor: pointer;
+      transition: 0.45s;
+      &:hover{
+        border: 1px solid $green;
+      }
+    }
+    .cell.selected {
+      background: $green;
+      color: $white;
+      &:hover{
+        background: $green;
+      }
+    }
+    .cell.highlighted {
+      background: $green;
+      color: $white;
+      &.selected {
+        background: $green;
+      }
+      &.disabled {
+        color: #a3a3a3;
+      }
+      &.highlight-start, &:last-child {
+        background: $darkGreen;
+      }
+    }
+    .cell.grey {
+      color: #888;
+      &:hover{
+        background: inherit;
+      }
+    }
+    .cell.day-header {
+      font-size: 75%;
+      white-space: nowrap;
+      cursor: inherit;
+      &:hover{
+        background: inherit;
+      }
+    }
+    .month, .year{
+      width: 33.333%;
+    }
+  }
+  &__clear-button, &__calendar-button{
+    cursor: pointer;
+    font-style: normal;
+    position: absolute;
+    top: 12px;
+    right:12px;
+    &.disabled {
+      color: #999;
+      cursor: default;
+    }
+  }
+  #calendar-div{
+    background-color: white;
+    border-radius:5px;
+  }
+}
+
+.dp-error {
+  color: red;
+  font-size: 12px
+}
+
+.backdrop{
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
